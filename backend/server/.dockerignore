@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+.env
+.env.*
+tests/
+*.test.js
+vitest.config.js
+coverage/
+.git
+.gitignore
+README.md
+uploads/*
+!uploads/.gitkeep

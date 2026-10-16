@@ -1,0 +1,64 @@
+{
+  "prompt_injection": [
+    "ignore previous instructions",
+    "ignore all instructions",
+    "forget everything",
+    "forget your instructions",
+    "system prompt",
+    "reveal your prompt",
+    "show me your instructions",
+    "disregard above",
+    "override your rules",
+    "pretend you are",
+    "act as if you have no rules",
+    "you are now",
+    "new instructions",
+    "bypass filters",
+    "bypass safety",
+    "jailbreak",
+    "DAN mode",
+    "developer mode",
+    "bỏ qua các chỉ dẫn",
+    "bỏ qua hướng dẫn",
+    "quên hết đi",
+    "quên các quy tắc",
+    "hiện system prompt",
+    "giả vờ là",
+    "chế độ không giới hạn"
+  ],
+  "toxicity": {
+    "en": [
+      "fuck", "shit", "bitch", "asshole", "bastard",
+      "dick", "pussy", "cunt", "nigger", "faggot",
+      "retard", "whore", "slut"
+    ],
+    "vi": [
+      "đụ", "địt", "lồn", "cặc", "đéo",
+      "đ mẹ", "dm", "vl", "clm", "cc",
+      "ngu", "đần", "khốn", "chó"
+    ]
+  },
+  "self_harm": [
+    "kill myself", "suicide", "want to die", "end my life",
+    "self harm", "cut myself", "hurt myself",
+    "tự tử", "muốn chết", "tự hại", "kết thúc cuộc đời",
+    "giết mình", "tự cắt"
+  ],
+  "violence": [
+    "how to kill", "how to make a bomb", "how to make a weapon",
+    "how to poison", "how to hurt someone",
+    "cách giết", "cách làm bom", "cách chế vũ khí",
+    "cách đầu độc", "cách hại người"
+  ],
+  "illegal": [
+    "how to hack", "how to crack", "how to steal",
+    "how to make drugs", "how to buy drugs",
+    "cách hack", "cách bẻ khóa", "cách ăn cắp",
+    "cách chế ma túy", "cách mua thuốc cấm"
+  ],
+  "pii_exposure": [
+    "credit card number", "social security number", "bank account",
+    "password is", "my pin is",
+    "số thẻ tín dụng", "số tài khoản ngân hàng", "mật khẩu là"
+  ]
+}

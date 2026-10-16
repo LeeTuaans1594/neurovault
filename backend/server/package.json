@@ -1,0 +1,37 @@
+{
+  "name": "neurovault-server",
+  "version": "1.0.0",
+  "description": "NEUROVAULT API Gateway — Node.js/Express Backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "local": "node start-local.js"
+  },
+  "dependencies": {
+    "axios": "^1.16.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "express-session": "^1.19.0",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongo-sanitize": "^1.1.0",
+    "mongoose": "^8.1.1",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "tesseract.js": "^7.0.0",
+    "uuid": "^9.0.0",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^11.1.0",
+    "nodemon": "^3.0.3"
+  }
+}

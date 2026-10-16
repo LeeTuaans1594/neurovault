@@ -1,0 +1,211 @@
+/**
+ * MarkdownRenderer — Dark Theme Styling
+ * Designed for NeuroVault AI chat responses
+ */
+
+.md-content {
+  font-size: inherit;
+  line-height: 1.75;
+  color: var(--c-text-primary);
+  word-break: break-word;
+}
+
+/* ── Headings ── */
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+  font-weight: 700;
+  color: var(--c-text-primary);
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.md-content h1 { font-size: 1.25em; }
+.md-content h2 { font-size: 1.125em; }
+.md-content h3 { font-size: 1.05em; }
+.md-content h4 { font-size: 1em; font-weight: 600; }
+
+.md-content h1:first-child,
+.md-content h2:first-child,
+.md-content h3:first-child {
+  margin-top: 0;
+}
+
+/* ── Paragraphs ── */
+.md-content p {
+  margin: 0.5em 0;
+  line-height: 1.75;
+}
+
+.md-content p:first-child { margin-top: 0; }
+.md-content p:last-child { margin-bottom: 0; }
+
+/* ── Bold / Italic / Strikethrough ── */
+.md-content strong {
+  font-weight: 700;
+  color: var(--c-text-primary);
+}
+
+.md-content em {
+  font-style: italic;
+  color: var(--c-text-secondary);
+}
+
+.md-content del {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* ── Inline Code ── */
+.md-content code:not(pre code) {
+  background: rgba(99, 102, 241, 0.1);
+  color: #a78bfa;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  white-space: nowrap;
+}
+
+/* ── Code Blocks ── */
+.md-content pre {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+  margin: 0.75em 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.md-content pre code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.8125em;
+  line-height: 1.6;
+  color: #e2e8f0;
+  background: none;
+  border: none;
+  padding: 0;
+  white-space: pre;
+}
+
+/* ── Lists ── */
+.md-content ul,
+.md-content ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.md-content ul { list-style-type: disc; }
+.md-content ol { list-style-type: decimal; }
+
+.md-content li {
+  margin: 0.25em 0;
+  line-height: 1.7;
+  color: var(--c-text-primary);
+}
+
+.md-content li::marker {
+  color: var(--c-accent);
+}
+
+.md-content ul ul,
+.md-content ol ol,
+.md-content ul ol,
+.md-content ol ul {
+  margin: 0.15em 0;
+}
+
+/* ── Blockquote ── */
+.md-content blockquote {
+  border-left: 3px solid var(--c-accent);
+  margin: 0.75em 0;
+  padding: 0.5em 1em;
+  background: rgba(99, 102, 241, 0.04);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--c-text-secondary);
+}
+
+.md-content blockquote p {
+  margin: 0.25em 0;
+}
+
+/* ── Tables ── */
+.md-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  font-size: 0.875em;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.md-content thead th {
+  background: rgba(99, 102, 241, 0.08);
+  color: var(--c-text-primary);
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid var(--c-border);
+  font-size: 0.8125em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.md-content tbody td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--c-border);
+  color: var(--c-text-secondary);
+}
+
+.md-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.md-content tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* ── Horizontal Rule ── */
+.md-content hr {
+  border: none;
+  border-top: 1px solid var(--c-border);
+  margin: 1em 0;
+}
+
+/* ── Links ── */
+.md-content a {
+  color: var(--c-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.md-content a:hover {
+  border-bottom-color: var(--c-accent);
+}
+
+/* ── Images ── */
+.md-content img {
+  max-width: 100%;
+  border-radius: var(--radius-md);
+  margin: 0.5em 0;
+}
+
+/* ── Highlight.js theme overrides (dark) ── */
+.md-content .hljs-keyword { color: #c678dd; }
+.md-content .hljs-string { color: #98c379; }
+.md-content .hljs-number { color: #d19a66; }
+.md-content .hljs-comment { color: #5c6370; font-style: italic; }
+.md-content .hljs-function { color: #61afef; }
+.md-content .hljs-built_in { color: #e5c07b; }
+.md-content .hljs-title { color: #61afef; }
+.md-content .hljs-attr { color: #d19a66; }
+.md-content .hljs-variable { color: #e06c75; }
