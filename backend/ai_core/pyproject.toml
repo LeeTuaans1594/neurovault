@@ -1,0 +1,20 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+markers = [
+    "baseline: diagnostics measured against the legacy pipeline (expected to expose weaknesses)",
+    "integration: needs external services (MongoDB, Ollama, Gemini)",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+# Legacy modules are linted only for real errors until they are migrated.
+extend-exclude = [".venv", "data"]
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]
