@@ -23,8 +23,14 @@ from typing import Optional, List, Dict, Any
 # ──── Windows Encoding Fix ────
 # Tránh UnicodeEncodeError khi print ký tự đặc biệt trên Windows console
 if sys.platform == "win32":
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+    # reconfigure() keeps the same stream object (safe under pytest capture),
+    # instead of wrapping .buffer which closes the original stream on GC.
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            try:
+                _stream.reconfigure(encoding="utf-8", errors="replace")
+            except (ValueError, io.UnsupportedOperation):
+                pass
 
 # Add parent directory to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -108,8 +114,15 @@ OLLAMA_URL = os.getenv("OLLAMA_URL", "http://127.0.0.1:11434")
 LLM_MODEL = os.getenv("LLM_MODEL", "qwen3:1.7b")
 llm_engine = LLMEngine(base_url=OLLAMA_URL, model=LLM_MODEL)
 
+# Runtime rollback switch: "legacy" keeps the original pipeline, "v2" enables the
+# upgraded Document Intelligence pipeline (wired in Stage 4).
+PIPELINE_VERSION = os.getenv("PIPELINE_VERSION", "legacy").strip().lower()
+if PIPELINE_VERSION not in ("legacy", "v2"):
+    PIPELINE_VERSION = "legacy"
+
 # ──── Persistence Layer ────
-DATA_DIR = Path(os.path.dirname(os.path.abspath(__file__))) / ".." / "data"
+_DEFAULT_DATA_DIR = Path(os.path.dirname(os.path.abspath(__file__))) / ".." / "data"
+DATA_DIR = Path(os.getenv("AI_CORE_DATA_DIR", str(_DEFAULT_DATA_DIR)))
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 STORES_DIR = DATA_DIR / "doc_stores"
 STORES_DIR.mkdir(parents=True, exist_ok=True)
@@ -267,6 +280,7 @@ def health_check():
     return {
         "status": "ok",
         "service": "NEUROVAULT AI Core v4.0",
+        "pipeline_version": PIPELINE_VERSION,
         "llm": llm_health,
         "persisted_docs": len(list(STORES_DIR.glob("*.pkl"))),
         "cached_docs": len(doc_stores),
