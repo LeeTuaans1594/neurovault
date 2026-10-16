@@ -61,3 +61,6 @@ Thumbs.db
 
 # AI Core runtime data (processed documents)
 backend/ai_core/data/doc_stores/
+
+# Local backups (rollback)
+backups/
