@@ -1,0 +1,166 @@
+{
+  "name": "vi_hoc_may",
+  "language": "vi",
+  "file": "vi_hoc_may.docx",
+  "title": "Nhập môn Học máy",
+  "headings": [
+    {
+      "text": "Chương 1. Tổng quan về học máy",
+      "level": 1,
+      "page": null
+    },
+    {
+      "text": "1.1. Học có giám sát",
+      "level": 2,
+      "page": null
+    },
+    {
+      "text": "1.1.1. Hồi quy tuyến tính",
+      "level": 3,
+      "page": null
+    },
+    {
+      "text": "1.2. Học không giám sát",
+      "level": 2,
+      "page": null
+    },
+    {
+      "text": "Chương 2. Mạng nơ-ron nhân tạo",
+      "level": 1,
+      "page": null
+    },
+    {
+      "text": "2.1. Lan truyền ngược",
+      "level": 2,
+      "page": null
+    },
+    {
+      "text": "2.2. Học sâu",
+      "level": 2,
+      "page": null
+    },
+    {
+      "text": "2.2.1. Hiện tượng quá khớp",
+      "level": 3,
+      "page": null
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Chương 1. Tổng quan về học máy",
+      "body": [
+        "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu huấn luyện mà không cần lập trình tường minh. Một mô hình học máy tốt phải khái quát hoá được trên dữ liệu mới chưa từng thấy.",
+        "Quy trình học máy thường gồm thu thập dữ liệu, tiền xử lý dữ liệu, huấn luyện mô hình và đánh giá mô hình trên dữ liệu kiểm tra."
+      ],
+      "page": null
+    },
+    {
+      "heading": "1.1. Học có giám sát",
+      "body": [
+        "Học có giám sát sử dụng dữ liệu đã gán nhãn để huấn luyện mô hình. Bài toán phân loại và bài toán hồi quy là hai dạng phổ biến nhất của học có giám sát.",
+        "Trong bài toán phân loại, đầu ra là một nhãn rời rạc, ví dụ phân loại thư rác."
+      ],
+      "page": null
+    },
+    {
+      "heading": "1.1.1. Hồi quy tuyến tính",
+      "body": [
+        "Hồi quy tuyến tính dự đoán một giá trị liên tục từ các đặc trưng đầu vào. Mô hình được tối ưu bằng cách cực tiểu hoá hàm mất mát bình phương trung bình.",
+        "Hệ số của hồi quy tuyến tính có thể tìm bằng nghiệm giải tích hoặc bằng thuật toán hạ gradient."
+      ],
+      "page": null
+    },
+    {
+      "heading": "1.2. Học không giám sát",
+      "body": [
+        "Học không giám sát tìm cấu trúc ẩn trong dữ liệu chưa gán nhãn. Phân cụm là bài toán tiêu biểu, trong đó thuật toán K-means chia dữ liệu thành K cụm.",
+        "Giảm chiều dữ liệu bằng phân tích thành phần chính cũng là một kỹ thuật học không giám sát."
+      ],
+      "page": null
+    },
+    {
+      "heading": "Chương 2. Mạng nơ-ron nhân tạo",
+      "body": [
+        "Mạng nơ-ron nhân tạo gồm nhiều lớp nơ-ron liên kết với nhau. Mỗi nơ-ron áp dụng hàm kích hoạt lên tổng có trọng số của các đầu vào.",
+        "Hàm kích hoạt phổ biến gồm hàm sigmoid, hàm tanh và hàm ReLU."
+      ],
+      "page": null
+    },
+    {
+      "heading": "2.1. Lan truyền ngược",
+      "body": [
+        "Thuật toán lan truyền ngược tính đạo hàm của hàm mất mát theo từng trọng số của mạng. Sau đó thuật toán hạ gradient dùng các đạo hàm này để cập nhật trọng số.",
+        "Tốc độ học quyết định độ lớn của mỗi bước cập nhật trọng số."
+      ],
+      "page": null
+    },
+    {
+      "heading": "2.2. Học sâu",
+      "body": [
+        "Học sâu sử dụng mạng nơ-ron có nhiều lớp ẩn để học biểu diễn phân cấp. Mạng nơ-ron tích chập rất hiệu quả cho bài toán nhận dạng hình ảnh.",
+        "Mạng nơ-ron hồi tiếp phù hợp với dữ liệu chuỗi như văn bản và tiếng nói."
+      ],
+      "page": null
+    },
+    {
+      "heading": "2.2.1. Hiện tượng quá khớp",
+      "body": [
+        "Quá khớp xảy ra khi mô hình học thuộc dữ liệu huấn luyện nhưng dự đoán kém trên dữ liệu kiểm tra. Kỹ thuật dropout và chính quy hoá giúp giảm quá khớp.",
+        "Dừng sớm cũng là một cách hiệu quả để tránh quá khớp khi huấn luyện mạng nơ-ron."
+      ],
+      "page": null
+    }
+  ],
+  "concepts": [
+    "học máy",
+    "trí tuệ nhân tạo",
+    "dữ liệu huấn luyện",
+    "dữ liệu kiểm tra",
+    "học có giám sát",
+    "bài toán phân loại",
+    "bài toán hồi quy",
+    "hồi quy tuyến tính",
+    "hàm mất mát",
+    "hạ gradient",
+    "học không giám sát",
+    "phân cụm",
+    "k-means",
+    "phân tích thành phần chính",
+    "mạng nơ-ron nhân tạo",
+    "mạng nơ-ron",
+    "nơ-ron",
+    "hàm kích hoạt",
+    "trọng số",
+    "lan truyền ngược",
+    "tốc độ học",
+    "học sâu",
+    "lớp ẩn",
+    "mạng nơ-ron tích chập",
+    "mạng nơ-ron hồi tiếp",
+    "nhận dạng hình ảnh",
+    "quá khớp",
+    "dropout",
+    "chính quy hoá",
+    "dừng sớm"
+  ],
+  "compounds": [
+    "học máy",
+    "trí tuệ nhân tạo",
+    "dữ liệu huấn luyện",
+    "hồi quy tuyến tính",
+    "hàm mất mát",
+    "hạ gradient",
+    "phân cụm",
+    "mạng nơ-ron",
+    "hàm kích hoạt",
+    "trọng số",
+    "lan truyền ngược",
+    "học sâu",
+    "quá khớp",
+    "chính quy hoá",
+    "tốc độ học",
+    "dừng sớm"
+  ],
+  "reading_order": null,
+  "noise_strings": []
+}

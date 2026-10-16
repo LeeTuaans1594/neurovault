@@ -1,0 +1,157 @@
+{
+  "name": "en_information_retrieval",
+  "language": "en",
+  "file": "en_information_retrieval.pdf",
+  "title": "Introduction to Information Retrieval",
+  "headings": [
+    {
+      "text": "1 Indexing",
+      "level": 1,
+      "page": 2
+    },
+    {
+      "text": "1.1 Tokenization",
+      "level": 2,
+      "page": 2
+    },
+    {
+      "text": "1.2 Inverted Index",
+      "level": 2,
+      "page": 2
+    },
+    {
+      "text": "2 Ranking",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "2.1 Vector Space Model",
+      "level": 2,
+      "page": 3
+    },
+    {
+      "text": "2.2 BM25",
+      "level": 2,
+      "page": 3
+    },
+    {
+      "text": "3 Evaluation",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "3.1 Precision and Recall",
+      "level": 2,
+      "page": 4
+    },
+    {
+      "text": "3.2 Relevance Feedback",
+      "level": 2,
+      "page": 4
+    }
+  ],
+  "sections": [
+    {
+      "heading": "1 Indexing",
+      "body": [
+        "Indexing turns a document collection into data structures that support fast search. The two core steps are tokenization and building an inverted index."
+      ],
+      "page": 2
+    },
+    {
+      "heading": "1.1 Tokenization",
+      "body": [
+        "Tokenization splits raw text into tokens. Normalization then lowercases tokens, and stemming reduces words such as connected and connection to the stem connect. Stop words like the and of are often removed to shrink the index."
+      ],
+      "page": 2
+    },
+    {
+      "heading": "1.2 Inverted Index",
+      "body": [
+        "An inverted index maps every term to a postings list of the documents that contain it. Each posting can store the term frequency and the positions of the term, which enables phrase queries. Postings lists are sorted by document identifier so that intersection is fast."
+      ],
+      "page": 2
+    },
+    {
+      "heading": "2 Ranking",
+      "body": [
+        "Ranking orders the matching documents by their estimated relevance to the query."
+      ],
+      "page": 3
+    },
+    {
+      "heading": "2.1 Vector Space Model",
+      "body": [
+        "The vector space model represents queries and documents as vectors of term weights. TF-IDF weighting multiplies term frequency by inverse document frequency, so rare terms receive higher weights. Documents are ranked by the cosine similarity between the query vector and each document vector. Cosine similarity ignores document length because it only measures the angle between vectors. This makes long and short documents comparable."
+      ],
+      "page": 3
+    },
+    {
+      "heading": "2.2 BM25",
+      "body": [
+        "BM25 is a probabilistic ranking function that improves on TF-IDF weighting. It applies term frequency saturation through the parameter k1, so repeated terms give diminishing returns. It also applies document length normalization through the parameter b. BM25 remains a strong baseline for keyword search and is the default in many search engines."
+      ],
+      "page": 3
+    },
+    {
+      "heading": "3 Evaluation",
+      "body": [
+        "Evaluation measures how well a retrieval system satisfies information needs, using a test collection with relevance judgments."
+      ],
+      "page": 4
+    },
+    {
+      "heading": "3.1 Precision and Recall",
+      "body": [
+        "Precision is the fraction of retrieved documents that are relevant. Recall is the fraction of relevant documents that are retrieved. The F1 score is the harmonic mean of precision and recall. Mean average precision summarizes ranking quality across many queries."
+      ],
+      "page": 4
+    },
+    {
+      "heading": "3.2 Relevance Feedback",
+      "body": [
+        "Relevance feedback asks the user to mark relevant results and then reformulates the query. The Rocchio algorithm moves the query vector toward relevant documents. Pseudo relevance feedback assumes the top results are relevant and performs query expansion automatically."
+      ],
+      "page": 4
+    }
+  ],
+  "concepts": [
+    "information retrieval",
+    "indexing",
+    "tokenization",
+    "normalization",
+    "stemming",
+    "stop words",
+    "inverted index",
+    "postings list",
+    "term frequency",
+    "phrase queries",
+    "ranking",
+    "vector space model",
+    "tf-idf weighting",
+    "inverse document frequency",
+    "cosine similarity",
+    "bm25",
+    "term frequency saturation",
+    "document length normalization",
+    "evaluation",
+    "test collection",
+    "relevance judgments",
+    "precision",
+    "recall",
+    "f1 score",
+    "mean average precision",
+    "relevance feedback",
+    "rocchio algorithm",
+    "pseudo relevance feedback",
+    "query expansion"
+  ],
+  "compounds": [],
+  "reading_order": {
+    "before": "This makes long and short documents comparable.",
+    "after": "BM25 is a probabilistic ranking function"
+  },
+  "noise_strings": [
+    "Lecture Notes - Information Retrieval"
+  ]
+}
