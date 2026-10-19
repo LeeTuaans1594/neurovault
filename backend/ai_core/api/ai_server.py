@@ -84,6 +84,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ──── v2 Document Intelligence API (additive; legacy routes below are unchanged) ────
+from api.v2.router import router as v2_router  # noqa: E402
+
+app.include_router(v2_router)
+
 # ──── Initialize Modules ────
 pdf_parser = PDFParser()
 text_cleaner = TextCleaner()
